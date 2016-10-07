@@ -4,8 +4,11 @@ Trabalho desenvolvido para a disciplina de CES-27 - Web Development do Instituto
 
 Desenvolvedores:
 Agnaldo Cunha (Back End)
+
 Mattheus Jucá (Database)
+
 Cicero Macedo (Integração Pagar.me)
+
 Melina Nihari (Front End)
 
-Professor Iano
+Professor Yano
