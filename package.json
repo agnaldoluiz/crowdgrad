@@ -1,0 +1,30 @@
+{
+  "name": "crowdgrad",
+  "version": "1.0.0",
+  "description": "Crowdfunding for Graduation",
+  "main": "app.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha -w app.js test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agnaldoluiz/crowdgrad.git"
+  },
+  "author": "Agnaldo Cunha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agnaldoluiz/crowdgrad/issues"
+  },
+  "homepage": "https://github.com/agnaldoluiz/crowdgrad#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "hiredis": "^0.5.0",
+    "redis": "^2.6.2"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2",
+    "supertest": "^2.0.0"
+  }
+}

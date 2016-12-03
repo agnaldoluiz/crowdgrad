@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courses</title>
+  <link rel="stylesheet" href="./../style.css" />
+</head>
+<body>
+
+  <h1><%= courseName %></h1>
+
+  <h3>
+    <%= courseDescription %>
+  </h3>
+
+  <ul>
+  	<% for(var i=0; i < tamanho; i++) { %>
+  		<li><a href='/courses/<%= courseName %>/students/<%= students[i] %>'><%= students[i] %></a></li>
+  	<% } %>
+  </ul>
+
+</body>
+</html>
