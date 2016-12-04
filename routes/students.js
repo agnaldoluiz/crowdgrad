@@ -1,12 +1,10 @@
+'use strict'
 var express = require('express');
 var bodyParser = require('body-parser');
 var urlencode = bodyParser.urlencoded({extended: false});
 
 var client = require('./../models/redis');
-var courseRouter = require('./courses');
-
-var studentsRouter = express.Router({mergeParams: true});
-courseRouter.use('/:courseName/students', studentsRouter);
+var studentsRouter = require('./courses.js')
 
 studentsRouter.param('name', function(req, res, next){
 	var name = req.params.name;

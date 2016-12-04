@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Courses</title>
+  <title><%= courseName %></title>
   <link rel="stylesheet" href="./../style.css" />
 </head>
 <body>
@@ -13,7 +13,7 @@
     <%= courseDescription %>
   </h3>
 
-  <ul>
+  <ul class="course-list">
   	<% for(var i=0; i < tamanho; i++) { %>
   		<li><a href='/courses/<%= courseName %>/students/<%= students[i] %>'><%= students[i] %></a></li>
   	<% } %>

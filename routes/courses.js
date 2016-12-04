@@ -1,3 +1,4 @@
+'use strict'
 var express = require('express');
 var bodyParser = require('body-parser');
 var urlencode = bodyParser.urlencoded({extended: false});
@@ -48,5 +49,9 @@ coursesRouter.route('/:courseName')
 			res.sendStatus(204);
 		});
 	});
+
+var studentsRouter = express.Router({mergeParams: true});
+
+coursesRouter.use('/:courseName/students', studentsRouter);
 
 module.exports = coursesRouter;

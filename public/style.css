@@ -4,7 +4,7 @@
 
 html {
   background: #f9b8b4; /* Old browsers */
-  background: url('bg-stars.png') repeat-x center top, linear-gradient(to bottom, #f9b8b4 0%, #ebe8ba 100%) no-repeat center; /* W3C */
+  background: url('footer_lodyas.png') repeat-x center top, linear-gradient(to bottom, #f9b8b4 0%, #ebe8ba 100%) no-repeat center; /* W3C */
   min-height: 100%;
 }
 
@@ -24,6 +24,10 @@ h1 {
   margin-bottom: 20px;
 }
 
+h3 {
+  color: lightgray;
+}
+
 /* Lists */
 
 ul {
@@ -41,13 +45,13 @@ ul li:last-child {
 /* Links */
 
 a {
-  color: #d19b99;
+  color: #808080;
   text-decoration: underline;
   transition: color 0.2s ease-in-out;
 }
 a:hover,
 a:active {
-  color: #333;
+  color: black;
 }
 
 /* Shared */
@@ -68,21 +72,22 @@ legend {
 }
 input {
   border: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #333;
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
+  font-color: white;
   margin: 0;
   margin-bottom: 10px;
   padding: 10px;
   width: 100%;
 }
 input:focus {
-  box-shadow: 0 0 4px rgba(249, 184, 180, 0.85);
+  box-shadow: 0 0 4px #2F4F4F;
   outline: none;
 }
 input[type="submit"] {
-  background: #d19b99;
+  background: #808080;
   border: 0;
   border-radius: 4px;
   color: white;
