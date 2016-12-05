@@ -11,13 +11,16 @@ if(process.env.REDISTOGO_URL) {
 module.exports = client;
 //End of Redis Connection
 
-client.hset('courses', 'COMP', 'Melhor Engenharia');
-client.hset('courses', 'MEC', 'Pior Engenharia');
-client.hset('courses', 'ELE', 'Nerds bobos');
+client.hset('courses', 'COMP', 'Engenharia de Computação');
+client.hset('courses', 'MEC', 'Engenharia Mecânica-Aeronáutica');
+client.hset('courses', 'ELE', 'Engenharia Eletrônica');
+client.hset('courses', 'AER', 'Engenharia Aeronáutica');
+client.hset('courses', 'AESP', 'Engenharia Aeroespacial');
 
-client.hset('students', 'Cássio', 'Meu nome eh Cássio');
-client.hset('students', 'Gustavo', 'V de Vibrana!');
-client.hset('students', 'Eric', 'Um garoto polêmico');
+
+client.hmset('students:1', 'name', 'Cássio', 'Joke', 'Vou dançar Rihanna', 'money', '10');
+client.hmset('students:2', 'name', 'Gustavo', 'Joke', 'Vou entrar no rancho marchando!', 'money', '20');
+client.hmset('students:3', 'name', 'Eric', 'Joke', 'Vou apagar a luz da festa da AGITA', 'money', '40');
 
 //Redis relation one-to-many
 client.sadd('COMP', 'Cássio');

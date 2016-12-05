@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title><%= student.name %></title>
-  <link rel="stylesheet" href="./../style.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/style.css" />
+
 </head>
 <body>
 
-  <h1><%= student.name %></h1>
+  <h1 style="color: darkgray"><%= student.name %></h1>
 
-  <h3>
+  <h3 style="color: black">
     <%= student.description %>
   </h3>
 
@@ -17,14 +19,96 @@
 <div class="well well-large voffset2">
     <div class = "row">
         <div class = "col-xs-3">
-            <img src="./../nophoto.jpeg" class="img-thumbnail">
+            <img src="/nophoto.jpeg" class="img-thumbnail">
         </div>
-        <h3><%= student.name %></h3>
-        <h4 class = "voffset4">School: KK</h4>
-        <h4 class = "voffset4">Departament: KK </h4>
-        <h4 class = "voffset4">General Rating: KK</h4>
+        <h3 style="color: darkgray"><%= student.name %></h3>
+        <h4 class = "voffset4">Universidade: ITA</h4>
+        <h4 class = "voffset4">Curso: COMP</h4>
+        <h4 class = "voffset4">Meta de Arrecadação: R$100</h4>
     </div>
 </div>
+
+<p>Total Arrecadado</p>
+<div id="myProgress">
+  <div id="myBar">
+    <!--Incluir Money -->
+  	<div id="contador">R$10</div>
+  </div>
+</div>
+
+
+<br>
+<br>
+
+Pague com: <img src="/pagarme.png">
+
+<br>
+<br>
+<button id="pay-button" class="btn btn-primary" onclick="move()">Modos de Pagamento</button>
+
+<br>
+<br>
+<br>
+
+<p>Estudante, faça o upload do seu vídeo:</p>
+<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Upload Video</button>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Upload Video:</h4>
+        </div>
+
+      <div class="modal-body">
+
+        <form action="" method="get" name="post" role="form" class="form-horizontal">
+              <div class="form-group">
+                <label for="className" class="col-sm-3 control-label">Video link:</label>
+                <div class="col-sm-4">
+                  <input type="text"  id="link" name="Yotube Link" placeholder="Youtube Link">
+                </div>
+             </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Post</button>
+      </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div> 
+
+<iframe id="video" width="420" height="315" src="//www.youtube.com/embed/9B7te184ZpQ?rel=0" frameborder="0" allowfullscreen></iframe>
+    
+    <script src="/jquery.js"></script>
+  	<script src="/bar.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var button = $('#pay-button');
+
+        button.click(function() {
+
+            // INICIAR A INSTÂNCIA DO CHECKOUT
+            // declarando um callback de sucesso
+            var checkout = new PagarMeCheckout.Checkout({"encryption_key":"ENCRYPTION KEY", success: function(data) {
+                console.log(data);
+                //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
+            }});
+
+            // DEFINIR AS OPÇÕES
+            // e abrir o modal
+            // É necessário passar os valores boolean em "var params" como string
+            var params = {"customerData":"false", "amount":"1000", "createToken": "true", "interestRate": 10 };
+            checkout.open(params);
+        });
+    });
+    </script>
+    <script src="https://assets.pagar.me/checkout/checkout.js"></script>
+
 
 </body>
 </html>

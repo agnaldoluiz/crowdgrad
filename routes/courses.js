@@ -50,7 +50,8 @@ coursesRouter.route('/:courseName')
 		});
 	});
 
-var studentsRouter = express.Router({mergeParams: true});
+
+var studentsRouter = require('./students.js')
 
 coursesRouter.use('/:courseName/students', studentsRouter);
 

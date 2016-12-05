@@ -4,7 +4,8 @@ var bodyParser = require('body-parser');
 var urlencode = bodyParser.urlencoded({extended: false});
 
 var client = require('./../models/redis');
-var studentsRouter = require('./courses.js')
+
+var studentsRouter = express.Router({mergeParams: true});
 
 studentsRouter.param('name', function(req, res, next){
 	var name = req.params.name;

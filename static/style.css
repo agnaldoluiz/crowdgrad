@@ -86,26 +86,6 @@ input:focus {
   box-shadow: 0 0 4px #2F4F4F;
   outline: none;
 }
-
-#myProgress {
-    position: relative;
-    width: 70%;
-    height: 30px;
-    background-color: grey;
-}
-#myBar {
-    position: absolute;
-    width: 10%;
-    height: 100%;
-    background-color: black;
-}
-
-#contador {
-    text-align: center; /* If you want to center it */
-    line-height: 30px; /* Set the line-height to the same as the height of the progress bar container, to center it vertically */
-    color: white;
-}
-
 input[type="submit"] {
   background: #808080;
   border: 0;
